@@ -28,8 +28,9 @@ public class ZengoSite {
 	}
 
 	@Test
-	public void test1() {
+	public void zengoTest() {
 		MainPage mainPage = new MainPage(driver, wait);
+		wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("nav.nav-primary > ul >li"), 6));
 		mainPage.getFeatures().click();
 		mainPage.getBuy().click();
 		Assert.assertEquals(driver.getCurrentUrl(), "https://zengowallet.banxa.com/");
